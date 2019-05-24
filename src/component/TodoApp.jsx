@@ -30,6 +30,15 @@ class TodoApp extends Component {
     }));
   };
 
+  /* Done Task */
+  handleDone = itemE => {
+    let tasks = this.state.tasks.map(item => {
+      item.id === itemE.id && (item.isDone = !itemE.isDone);
+      return item;
+    });
+    this.setState({ tasks });
+  };
+
   /* Show Just Task Done */
   handleClickDone = () => {
     this.setState({ done: true, todo: false });
