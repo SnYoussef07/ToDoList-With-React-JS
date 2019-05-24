@@ -30,7 +30,18 @@ class TodoApp extends Component {
     }));
   };
 
-  
+  /* Show Just Task Done */
+  handleClickDone = () => {
+    this.setState({ done: true, todo: false });
+  };
+  /* Show Just Task */
+  handleClickTodo = () => {
+    this.setState({ done: false, todo: true });
+  };
+  /* Show All */
+  handleClickAll = () => {
+    this.setState({ done: false, todo: false });
+  };
 
   render() {
     return (
