@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import Task from "./Task";
+import Task from "./Task";
 
 class TodoApp extends Component {
   constructor(props) {
@@ -88,7 +88,26 @@ class TodoApp extends Component {
           </div>
           <hr />
           <div className="todo mt-4">
-            <ul className="list-group" />
+            <ul className="list-group">
+              {this.state.tasks.map(item => (
+                <li
+                  key={item.id}
+                  className={`list-group-item ${item.isDone &&
+                    "bg-success text-white"} ${this.state.done &&
+                    (item.isDone ? "d-inline" : "d-none")} ${this.state.todo &&
+                    (item.isDone ? "d-none" : "d-inline")}`}
+                >
+                  <Task
+                    task={item}
+                    content={item.content}
+                    changeContent={this.handleChangeContent}
+                    clickEDit={this.handleClickEdit}
+                    removeTask={this.handleRemove}
+                    doneTask={this.handleDone}
+                  />
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>
