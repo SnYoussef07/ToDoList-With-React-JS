@@ -17,6 +17,7 @@ class TodoList extends Component {
     this.setState({ value: e.target.value });
   };
 
+  /* Add Task */
   handleClick = e => {
     let task = {
       id: this.state.tasks.length,
@@ -78,7 +79,7 @@ class TodoList extends Component {
   handleClickAll = () => {
     this.setState({ done: false, todo: false });
   };
-  /* Clear Completed */  
+  /* Clear Completed */
   handleClickClearCompleted = () => {
     let tasks = this.state.tasks.filter(item => {
       return !item.isDone;
@@ -86,8 +87,11 @@ class TodoList extends Component {
 
     this.setState({ tasks });
   };
+  /* Clear alla task */
+  handleClickClearAll = () => {
+    this.setState({ tasks: [] });
+  };
 
-  /* clear all */
   render() {
     return (
       <section className="todoList rounded mt-5 p-2">
@@ -101,26 +105,32 @@ class TodoList extends Component {
               onChange={this.handleChange}
             />
             <button className="btn btn-primary" onClick={this.handleClick}>
-              Add
+              Show Add
             </button>
           </div>
           <button className="btn btn-info mr-3" onClick={this.handleClickTodo}>
-            ToDo
+            Show ToDo
           </button>
           <button className="btn btn-info mr-3" onClick={this.handleClickDone}>
-            Done
+            Show Done
           </button>
           <button
             className="btn btn-secondary mr-3"
             onClick={this.handleClickAll}
           >
-            All
+            Show All
           </button>
           <button
-            className="btn btn-warning text-white mr-3"
+            className="btn btn-danger text-white mr-3"
             onClick={this.handleClickClearCompleted}
           >
             Clear Completed
+          </button>
+          <button
+            className="btn btn-danger text-white mr-3"
+            onClick={this.handleClickClearAll}
+          >
+            Clear All
           </button>
         </div>
         <hr />
