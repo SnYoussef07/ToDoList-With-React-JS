@@ -88,9 +88,7 @@ class TodoApp extends Component {
           </div>
           <hr />
           <div className="todo mt-4">
-            <ul className="list-group">
-              
-            </ul>
+            <ul className="list-group" />
           </div>
         </section>
       </div>
