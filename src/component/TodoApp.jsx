@@ -55,6 +55,16 @@ class TodoApp extends Component {
     });
     this.setState({ tasks });
   };
+
+  /* Function Change content task*/
+  handleChangeContent = (e, itemE) => {
+    let tasks = this.state.tasks.map(item => {
+      item.id === itemE.id && (item.content = e.target.value);
+      return item;
+    });
+
+    this.setState({ tasks });
+  };
   
   /* Show Just Task Done */
   handleClickDone = () => {
