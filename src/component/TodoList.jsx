@@ -71,14 +71,17 @@ class TodoList extends Component {
   handleClickDone = () => {
     this.setState({ done: true, todo: false });
   };
+
   /* Show Just Task */
   handleClickTodo = () => {
     this.setState({ done: false, todo: true });
   };
+
   /* Show All */
   handleClickAll = () => {
     this.setState({ done: false, todo: false });
   };
+
   /* Clear Completed */
   handleClickClearCompleted = () => {
     let tasks = this.state.tasks.filter(item => {
@@ -87,6 +90,7 @@ class TodoList extends Component {
 
     this.setState({ tasks });
   };
+
   /* Clear alla task */
   handleClickClearAll = () => {
     this.setState({ tasks: [] });
@@ -105,7 +109,7 @@ class TodoList extends Component {
               onChange={this.handleChange}
             />
             <button className="btn btn-primary" onClick={this.handleClick}>
-              Show Add
+              Add
             </button>
           </div>
           <button className="btn btn-info mr-3" onClick={this.handleClickTodo}>

@@ -8,17 +8,20 @@ ToDo list is a simple web application to save Your daily tasks in order not to m
 - Mark task as completed / uncompleted
 - Edit task
 - Delete single task
-
 - Delete completed tasks
 - Delete all tasks
 
 ### Technologies used:
 
-- HTML
-- CSS
-- JavaScript/jQuery 3.1.1
-- jQuery UI
-- Firebase
+- React Js
+- Bootstrap
 
-### App demo
+### App ScreenShot
+
+![Alt](https://raw.githubusercontent.com/SnYoussef07/Sn-Emporium/secondBranch/public/img/img1.png)
+![Alt](https://raw.githubusercontent.com/SnYoussef07/Sn-Emporium/secondBranch/public/img/img2.png)
+![Alt](https://raw.githubusercontent.com/SnYoussef07/Sn-Emporium/secondBranch/public/img/img3.png)
+![Alt](https://raw.githubusercontent.com/SnYoussef07/Sn-Emporium/secondBranch/public/img/img4.png)
+
+
 
