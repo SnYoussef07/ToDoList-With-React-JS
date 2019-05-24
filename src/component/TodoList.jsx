@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Task from "./Task";
 
-
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -79,7 +78,16 @@ class TodoList extends Component {
   handleClickAll = () => {
     this.setState({ done: false, todo: false });
   };
+  /* Clear Completed */  
+  handleClickClearCompleted = () => {
+    let tasks = this.state.tasks.filter(item => {
+      return !item.isDone;
+    });
 
+    this.setState({ tasks });
+  };
+
+  /* clear all */
   render() {
     return (
       <section className="todoList rounded mt-5 p-2">
@@ -93,29 +101,26 @@ class TodoList extends Component {
               onChange={this.handleChange}
             />
             <button className="btn btn-primary" onClick={this.handleClick}>
-              Ajouter
+              Add
             </button>
           </div>
-          <button
-            id="todo"
-            className="btn btn-info mr-3"
-            onClick={this.handleClickTodo}
-          >
+          <button className="btn btn-info mr-3" onClick={this.handleClickTodo}>
             ToDo
           </button>
-          <button
-            id="Done"
-            className="btn btn-info mr-3"
-            onClick={this.handleClickDone}
-          >
+          <button className="btn btn-info mr-3" onClick={this.handleClickDone}>
             Done
           </button>
           <button
-            id="all"
             className="btn btn-secondary mr-3"
             onClick={this.handleClickAll}
           >
             All
+          </button>
+          <button
+            className="btn btn-warning text-white mr-3"
+            onClick={this.handleClickClearCompleted}
+          >
+            Clear Completed
           </button>
         </div>
         <hr />
