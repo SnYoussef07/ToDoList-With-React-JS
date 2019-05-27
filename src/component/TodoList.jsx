@@ -96,6 +96,22 @@ class TodoList extends Component {
     this.setState({ tasks: [] });
   };
 
+  /* Storage */
+  componentDidMount() {
+    if (sessionStorage.getItem("allTasks") !== null) {
+      let storageTask = Object.values(
+        JSON.parse(sessionStorage.getItem("allTasks"))
+      );
+      this.setState({
+        tasks: storageTask
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    sessionStorage.setItem("allTasks", JSON.stringify(this.state.tasks));
+  }
+
   render() {
     return (
       <section className="todoList rounded mt-5 p-2">
